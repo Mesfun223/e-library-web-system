@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Details - E-Library</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h1>E-Library</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Book Details Section -->
+  <section class="book-details">
+
+    <div class="details-container">
+
+      <!-- Book Image -->
+      <div class="details-image">
+        <img src="images/csharp.jpg" alt="C# Programming Book">
+      </div>
+
+      <!-- Book Info -->
+      <div class="details-info">
+        <h2>C# Programming</h2>
+        <p><strong>Author:</strong> Bob James</p>
+        <p><strong>Category:</strong> Programming</p>
+        <p><strong>Description:</strong></p>
+        <p>
+          This book provides a complete introduction to C# programming. 
+          Learn the fundamentals, object-oriented concepts, and build real-world applications.
+        </p>
+        <p><strong>Rate:</strong> 4</p>
+        <p><strong>Publish Year</strong>2020</p>
+
+        <a href="#" class="download-btn">Download Book</a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; <span id="year"></span> E-Library. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
