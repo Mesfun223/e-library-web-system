@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit Book - E-Library</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  background: #f4f6fb;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: #1e1e2f;
+  color: #fff;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+.sidebar ul li a {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+  background: #6c63ff;
+  color: #fff;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* TOPBAR */
+.topbar {
+  margin-bottom: 20px;
+}
+
+/* FORM */
+.form-container {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 500px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* BUTTONS */
+.form-actions {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background: #6c63ff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #574fd6;
+}
+
+.btn-secondary {
+  background: #ccc;
+}
+
+.btn-secondary:hover {
+  background: #aaa;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main {
+    width: 100%;
+  }
+
+  .form-container {
+    max-width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <h2><i class="fa-solid fa-book"></i> E-Library</h2>
+  <ul>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="books_dashboard.html" class="active">Books</a></li>
+    <li><a href="users_dashboard.html">Users</a></li>
+    <li><a href="../login.html">Logout</a></li>
+  </ul>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <h2><i class="fa-solid fa-pen-to-square"></i> Edit Book</h2>
+  </div>
+
+  <!-- FORM -->
+  <div class="form-container">
+    <form>
+
+      <div class="form-group">
+        <label>Book Title</label>
+        <input type="text" value="Python Programming">
+      </div>
+
+      <div class="form-group">
+        <label>Author</label>
+        <input type="text" value="John Doe">
+      </div>
+
+      <div class="form-group">
+        <label>Category</label>
+        <input type="text" value="Programming">
+      </div>
+
+      <div class="form-group">
+        <label>Status</label>
+        <select>
+          <option selected>Available</option>
+          <option>Borrowed</option>
+          <option>Unavailable</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Description</label>
+        <textarea rows="4">A beginner-friendly guide to Python programming.</textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Replace Book File</label>
+        <input type="file">
+      </div>
+
+      <div class="form-actions">
+        <button class="btn btn-primary">
+          <i class="fa-solid fa-save"></i> Update Book
+        </button>
+        <a href="books_dashboard.html" class="btn btn-secondary">
+          Cancel
+        </a>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+
+</body>
+</html>
