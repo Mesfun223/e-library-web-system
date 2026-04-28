@@ -4,55 +4,95 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - E-Library</title>
+
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <h1>E-Library</h1>
-    <ul>
-      <li><a href="index.html" >Home</a></li>
-      <li><a href="books.html">Books</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="register.html">Register</a></li>
-      <li><a href="login.html" class="active">Login</a></li>
-    </ul>
-  </nav>
+<!-- NAVBAR -->
+<nav>
+  <h1><i class="fa-solid fa-book"></i> E-Library</h1>
 
-  <!-- Login Section -->
-  <section class="login-container">
-    <div class="login-box">
-      <h2>Login</h2>
+  <ul>
+    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+    <li><a href="books.html"><i class="fa-solid fa-book-open"></i> Books</a></li>
+    <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+    <li><a href="register.html"><i class="fa-solid fa-user-plus"></i> Register</a></li>
+    <li><a href="login.html" class="active"><i class="fa-solid fa-right-to-bracket"></i> Login</a></li>
+  </ul>
+</nav>
 
-      <form>
-        <div class="input-group">
-          <label>Email</label>
-          <input type="email" placeholder="Enter your email" required>
-        </div>
+<!-- LOGIN -->
+<section class="login-container">
+  <div class="login-box">
+    <h2>Login</h2>
 
-        <div class="input-group">
-          <label>Password</label>
-          <input type="password" placeholder="Enter your password" required>
-        </div>
+    <form onsubmit="loginUser(event)">
 
-        <button type="submit">Login</button>
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
 
-        <p class="extra">
-          Don't have an account? <a href="#">Register</a>
-        </p>
-      </form>
-    </div>
-  </section>
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+      </div>
 
-  <!-- Footer -->
-  <footer>
-    &copy; <span id="year"></span> E-Library. All rights reserved.
-  </footer>
+      <button type="submit">
+        <i class="fa-solid fa-right-to-bracket"></i> Login
+      </button>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+      <p class="extra">
+        Don't have an account? <a href="#">Register</a>
+      </p>
+
+      <!-- ERROR MESSAGE -->
+      <p id="errorMsg" class="error"></p>
+
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  &copy; <span id="year"></span> E-Library. All rights reserved.
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* LOGIN LOGIC */
+function loginUser(event) {
+  event.preventDefault();
+
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let error = document.getElementById("errorMsg");
+
+  /* ADMIN CREDENTIALS */
+  let adminEmail = "admin@gmail.com";
+  let adminPassword = "12345";
+
+  if (email === adminEmail && password === adminPassword) {
+    // redirect to dashboard
+    window.location.href = "Dashboard/dashboard.html";
+  } else {
+    error.textContent = "Invalid email or password!";
+  }
+}
+</script>
 
 </body>
 </html>
